@@ -1,0 +1,26 @@
+{
+  "name": "@hexlet/code",
+  "version": "0.1.0",
+  "description": "Difference Calculator",
+  "type": "module",
+  "main": "index.js",
+  "bin": {
+    "gendiff": "src/bin/gendiff.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/ScreamStarIT/frontend-project-lvl2.git"
+  },
+  "author": "Anton Azarenko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ScreamStarIT/frontend-project-lvl2/issues"
+  },
+  "homepage": "https://github.com/ScreamStarIT/frontend-project-lvl2#readme",
+  "dependencies": {
+    "commander": "^7.2.0"
+  }
+}
