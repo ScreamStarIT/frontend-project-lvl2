@@ -3,7 +3,7 @@ import path from 'path';
 import process from 'process';
 import _ from 'lodash';
 
-const reader = filepath => fs.readFileSync(path.resolve(process.cwd(), filepath), 'utf8');
+const reader = (filepath) => fs.readFileSync(path.resolve(process.cwd(), filepath), 'utf8');
 
 const getSortedKeys = (obj1, obj2) => {
   const keys1 = Object.keys(obj1);
@@ -22,13 +22,13 @@ const genDiff = (filepath1, filepath2) => {
       ) : (
         `${string}  - ${key}: ${data1[key]}\n  + ${key}: ${data2[key]}\n`
       );
-    } else if (_.has(data1, `${key}`)) {
-      return `${string}  - ${key}: ${data1[key]}\n`;
-    } else {
-      return `${string}  + ${key}: ${data2[key]}\n`;
     }
+    if (_.has(data1, `${key}`)) {
+      return `${string}  - ${key}: ${data1[key]}\n`;
+    }
+    return `${string}  + ${key}: ${data2[key]}\n`;
   }, '');
-  return console.log(`{\n${difference}}`);
+  return `{\n${difference}}`;
 };
 
 export default genDiff;
