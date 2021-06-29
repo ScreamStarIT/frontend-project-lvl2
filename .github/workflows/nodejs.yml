@@ -17,7 +17,6 @@ jobs:
     strategy:
       matrix:
         node-version: [12.x, 14.x, 16.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
     - uses: actions/checkout@v2
@@ -25,5 +24,11 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
-    - run: npm ci
+    - name: npm install
+      run: npm ci
+      env:
+          CI: true
+    - name: Run linter
+      run: make lint
+    - name: Test & publish code coverage
     - run: npm test
