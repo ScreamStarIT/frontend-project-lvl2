@@ -1,9 +1,5 @@
-import fs from 'fs';
-import path from 'path';
-import process from 'process';
 import _ from 'lodash';
-
-const reader = (filepath) => fs.readFileSync(path.resolve(process.cwd(), filepath), 'utf8');
+import parse from './parsers.js';
 
 const getSortedKeys = (obj1, obj2) => {
   const keys1 = Object.keys(obj1);
@@ -12,8 +8,8 @@ const getSortedKeys = (obj1, obj2) => {
 };
 
 const genDiff = (filepath1, filepath2) => {
-  const data1 = JSON.parse(reader(filepath1));
-  const data2 = JSON.parse(reader(filepath2));
+  const data1 = parse(filepath1);
+  const data2 = parse(filepath2);
   const keys = _.uniq(getSortedKeys(data1, data2));
   const difference = keys.reduce((string, key) => {
     if (_.has(data1, `${key}`) && _.has(data2, `${key}`)) {
