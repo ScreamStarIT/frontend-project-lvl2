@@ -23,10 +23,7 @@ const compare = (dataBefore, dataAfter) => {
       return { key, status: 'removed', value: dataBefore[key] };
     }
     return {
-      key,
-      status: 'modified',
-      oldValue: dataBefore[key],
-      newValue: dataAfter[key],
+      key, status: 'modified', oldValue: dataBefore[key], newValue: dataAfter[key],
     };
   });
 };
