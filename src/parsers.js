@@ -3,7 +3,7 @@ import path from 'path';
 import process from 'process';
 import yaml from 'js-yaml';
 
-const parse = (filepath) => {
+export default (filepath) => {
   const content = fs.readFileSync(path.resolve(process.cwd(), filepath), 'utf8');
   const format = path.extname(filepath).slice(1);
   const parsers = {
@@ -13,5 +13,3 @@ const parse = (filepath) => {
   };
   return parsers[format](content);
 };
-
-export default parse;
