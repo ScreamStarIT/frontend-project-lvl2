@@ -19,3 +19,9 @@ test('genDiff YAML', () => {
   const pathToYML2 = getFixturePath('after.yml');
   expect(genDiff(pathToYML1, pathToYML2)).toBe(readFile('result.txt'));
 });
+
+test('genDiff plain format', () => {
+  const pathToFile1 = getFixturePath('before.json');
+  const pathToFile2 = getFixturePath('after.json');
+  expect(genDiff(pathToFile1, pathToFile2, 'plain')).toBe(readFile('plain.txt'));
+});
