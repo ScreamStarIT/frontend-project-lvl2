@@ -28,10 +28,10 @@ const compare = (dataBefore, dataAfter) => {
   });
 };
 
-const genDiff = (filepath1, filepath2, outputFormat = 'stylish') => {
+const genDiff = (filepath1, filepath2, format = 'stylish') => {
   const data1 = getData(filepath1);
   const data2 = getData(filepath2);
-  return getFormatter(outputFormat)(compare(data1, data2));
+  return getFormatter(format)(compare(data1, data2));
 };
 
 export default genDiff;

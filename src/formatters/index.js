@@ -1,5 +1,6 @@
-import stylish from './stylish.js';
+import makeStylish from './stylish.js';
+import makePlain from './plain.js';
 
-const formatters = { stylish };
+const formatters = { stylish: makeStylish, plain: makePlain };
 
 export default (format) => formatters[format];

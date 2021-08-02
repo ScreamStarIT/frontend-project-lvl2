@@ -23,9 +23,9 @@ const statusActions = {
   unchanged: (count, object) => stringifyValue(count, object.key, object.value, '    '),
 };
 
-const makeStylish = (diffs, depth) => {
+const makeStylish = (diffs, depth = 0) => {
   const strings = diffs.flatMap((item) => statusActions[item.status](depth, item, makeStylish));
   return ['{', ...strings, `${indent(depth)}}`].join('\n');
 };
 
-export default (difference) => makeStylish(difference, 0);
+export default makeStylish;
