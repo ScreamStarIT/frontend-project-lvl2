@@ -6,3 +6,4 @@
 ### [Comparing two flat files](https://asciinema.org/a/PSfHNin8N4SaRfgRDmOFNB3CL)
 ### [Comparing two files recursively](https://asciinema.org/a/BaAhXvWml6kp9fiGYN5qwmDSI)
 ### [Plain output format](https://asciinema.org/a/q47lvr1jV0kcB58sMk8cegkeC)
+### [JSON output format](https://asciinema.org/a/BUkjgM0XR5VRJhCqn0Zfay3Lt)
